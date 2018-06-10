@@ -8,10 +8,10 @@ RUN apt-get -y update
 #RUN apt-get -y install software-properties-common
 
 RUN apt-get -y install ffmpeg openssl python
-RUN apt-get -y install python-pip
+RUN apt-get -y install python3-pip
 
-RUN pip install youtube-dl
-#RUN pip install pueue
+RUN pip3 install youtube-dl
+RUN pip3 install pueue
 
 WORKDIR /data
 
