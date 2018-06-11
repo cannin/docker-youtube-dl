@@ -13,7 +13,10 @@ RUN apt-get -y install python3-pip
 RUN pip3 install youtube-dl
 RUN pip3 install pueue
 
-RUN echo alias dd="function _dd(){ pueue add 'youtube-dl --retries 5 --restrict-filenames --continue --no-mtime $1'; };_dd" >> ~/.bashrc
+RUN apt-get -y install nano wget git htop links
+
+COPY pueue_cmd.py /usr/local/bin/dd
+RUN chmod +x /usr/local/bin/dd
 
 WORKDIR /data
 
